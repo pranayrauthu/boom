@@ -1,0 +1,17 @@
+{
+  "name": "boom",
+  "version": "1.0.0",
+  "description": "command line http tool",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^3.0.1"
+  }
+}
