@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^3.0.1"
+    "commander": "^3.0.1",
+    "lodash": "^4.17.15"
   }
 }
