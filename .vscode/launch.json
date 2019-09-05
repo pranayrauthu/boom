@@ -7,10 +7,20 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\index.js",
+            "name": "with curl",
+            "program": "${workspaceFolder}\\src\\index.js",
             "args": [
                 "c",
+                "${workspaceFolder}\\sample\\sample.http"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "with execute",
+            "program": "${workspaceFolder}\\src\\index.js",
+            "args": [
+                "x",
                 "${workspaceFolder}\\sample\\sample.http"
             ]
         }

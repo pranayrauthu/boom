@@ -3,6 +3,7 @@
 const program = require('commander');
 
 const curlProcessor = require('./processors/curl-processor');
+const executeReqProcessor = require('./processors/execute-req-processor');
 
 program
     .version('1.0.0')
@@ -12,5 +13,10 @@ program
     .command('c <source>')
     .description('converts the http req. to curl command')
     .action(curlProcessor);
+
+program
+    .command('x <source>')
+    .description('executes the http req.')
+    .action(executeReqProcessor);
 
 program.parse(process.argv);

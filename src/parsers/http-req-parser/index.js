@@ -1,6 +1,11 @@
 
 
 class HTTPRequestParser{
+    /**
+     * 
+     * @param {String} reqMessage - req message in string format
+     * @returns {Object}
+     */
     parse(reqMessage){
         const [
             firstLine,
