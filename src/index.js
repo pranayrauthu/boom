@@ -6,6 +6,8 @@ const curlProcessor = require('./processors/curl-processor');
 const executeReqProcessor = require('./processors/execute-req-processor');
 
 program
+    .name('boom')
+    .usage('command [args]')
     .version('1.0.0')
     .description('command line http tool');
 

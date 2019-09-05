@@ -6,7 +6,7 @@
   "preferGlobal": true,
   "bin": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,8 @@
     "axios": "^0.19.0",
     "commander": "^3.0.1",
     "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }
