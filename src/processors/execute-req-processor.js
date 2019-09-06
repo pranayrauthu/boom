@@ -23,11 +23,11 @@ function makeRequest(req) {
 }
 
 function executeReqProcessor(source) {
-    getSourceContent(source)
+    return getSourceContent(source)
         .then(parseFileContents)
         .then(makeRequest)
         .then(logToConsole)
-        .catch(logToConsole)
+        .catch(logToConsole);
 }
 
 module.exports = executeReqProcessor;

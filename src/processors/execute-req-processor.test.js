@@ -1,6 +1,6 @@
 const path = require('path');
 
-const curlProcessor = require('./curl-processor');
+const executeReqProcessor = require('./execute-req-processor');
 
 beforeEach(() => {
     global.console = {
@@ -19,9 +19,9 @@ test('should convert get request', () => {
         'sample',
         'simple-get.http');
     const expected = [
-        `curl -XGET https://jsonplaceholder.typicode.com/posts/1`
+        `{"userId":1,"id":1,"title":"sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body":"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto"}`
     ].join('\n');
-    return curlProcessor(fileSrc).then(() => {
+    return executeReqProcessor(fileSrc).then(() => {
         expect(global.console.log).toHaveBeenCalledWith(
             expected
         );
@@ -38,9 +38,9 @@ test('should convert post request', () => {
         'sample',
         'simple-post.http');
     const expected = [
-        `curl -XPOST https://jsonplaceholder.typicode.com/posts -H "Content-Type: application/json; charset=UTF-8"`
+        `{"title":"foo","body":"bar","userId":1,"id":101}`
     ].join('\n');
-    return curlProcessor(fileSrc).then(() => {
+    return executeReqProcessor(fileSrc).then(() => {
         expect(global.console.log).toHaveBeenCalledWith(
             expected
         );
