@@ -47,3 +47,41 @@ test('should convert post request', () => {
     });
 
 });
+
+test('should convert get request with env', () => {
+
+    const fileSrc = path.join(
+        __dirname,
+        '..',
+        '..',
+        'sample',
+        'get-with-env.http');
+    const expected = [
+        `{"userId":1,"id":1,"title":"sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body":"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto"}`
+    ].join('\n');
+    return executeReqProcessor(fileSrc).then(() => {
+        expect(global.console.log).toHaveBeenCalledWith(
+            expected
+        );
+    });
+
+});
+
+test('should convert post request with env', () => {
+
+    const fileSrc = path.join(
+        __dirname,
+        '..',
+        '..',
+        'sample',
+        'post-with-env.http');
+    const expected = [
+        `{"title":"foo","body":"bar","userId":1,"id":101}`
+    ].join('\n');
+    return executeReqProcessor(fileSrc).then(() => {
+        expect(global.console.log).toHaveBeenCalledWith(
+            expected
+        );
+    });
+
+});

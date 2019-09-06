@@ -5,7 +5,7 @@ const httpReqParser = require('./../parsers/http-req-parser');
 /**
  * reads the content of the file.
  * @param {String} source - req. file path
- * @returns {Promise}
+ * @returns {Promise} promise that resolves to file content
  */
 function getSourceContent(source) {
     return new Promise((resolve, reject) => {
@@ -28,7 +28,11 @@ function logToConsole(data) {
     console.log(JSON.stringify(data));
 }
 
-
+/**
+ * 
+ * @param {String} data - http req. message
+ * @returns {Promise} promise that resolves to parsed object.
+ */
 function parseFileContents(data) {
     return new Promise((resolve, reject) => {
         const parsedReq = httpReqParser.parse(data);
