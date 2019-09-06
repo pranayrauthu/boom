@@ -1,5 +1,52 @@
+const path = require('path');
+const {
+    logToConsole
+} = require('./../utils');
+
 const curlProcessor = require('./curl-processor');
 
+beforeEach(() => {
+    global.console = {
+        log: jest.fn(),
+        info: jest.fn(),
+        error: jest.fn()
+    };
+});
+
 test('should convert get request', () => {
-    throw 'Not implemented';
+
+    const fileSrc = path.join(
+        __dirname,
+        '..',
+        '..',
+        'sample',
+        'simple-get.http');
+    const expected = [
+        `curl -XGET https://jsonplaceholder.typicode.com/posts/1`
+    ].join('\n');
+    return curlProcessor(fileSrc).then(() => {
+        expect(global.console.log).toHaveBeenCalledWith(
+            expected
+        );
+    });
+
+});
+
+test('should convert post request', () => {
+
+    const fileSrc = path.join(
+        __dirname,
+        '..',
+        '..',
+        'sample',
+        'simple-post.http');
+    const expected = [
+        `curl -XPOST https://jsonplaceholder.typicode.com/posts -H "Content-Type: application/json; charset=UTF-8"`
+    ].join('\n');
+    return curlProcessor(fileSrc).then(() => {
+        expect(global.console.log).toHaveBeenCalledWith(
+            expected
+        );
+    });
+
 });

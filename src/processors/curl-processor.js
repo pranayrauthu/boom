@@ -24,7 +24,7 @@ function convertToCurl(data) {
 
 function curlProcessor(source) {
     // TODO: massage the file contents
-    getSourceContent(source)
+    return getSourceContent(source)
         .then(parseFileContents)
         .then(convertToCurl)
         .then(logToConsole)
