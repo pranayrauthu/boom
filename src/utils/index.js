@@ -1,4 +1,7 @@
 const fs = require('fs');
+const path = require('path');
+const he = require('he');
+const Mustache = require('mustache');
 const isString = require('lodash/isString');
 const httpReqParser = require('./../parsers/http-req-parser');
 
@@ -29,14 +32,29 @@ function logToConsole(data) {
 }
 
 /**
- * 
+ * parses the file along with .boom.json
  * @param {String} data - http req. message
  * @returns {Promise} promise that resolves to parsed object.
  */
 function parseFileContents(data) {
     return new Promise((resolve, reject) => {
-        const parsedReq = httpReqParser.parse(data);
-        resolve(parsedReq);
+        const configPath = path.join(
+            process.cwd(),
+            '.boom.json'
+        );
+        fs.readFile(configPath, (err, configData) => {
+            let rawData = data;
+            if(!err && data){
+                const config = JSON.parse(configData.toString());
+                rawData = Mustache.render(
+                    rawData,
+                    config.enviroments[config.activeEnvironment]
+                );
+                rawData = he.decode(rawData);
+            }
+            const parsedReq = httpReqParser.parse(rawData);
+            resolve(parsedReq);
+        });        
     });
 }
 

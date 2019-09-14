@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}\\src\\index.js",
             "args": [
                 "c",
-                "${workspaceFolder}\\sample\\sample.http"
+                "${workspaceFolder}\\sample\\get-with-env.http"
             ]
         },
         {
@@ -21,7 +21,7 @@
             "program": "${workspaceFolder}\\src\\index.js",
             "args": [
                 "x",
-                "${workspaceFolder}\\sample\\sample.http"
+                "${workspaceFolder}\\sample\\get-with-env.http"
             ]
         }
     ]

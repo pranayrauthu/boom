@@ -14,7 +14,9 @@
   "dependencies": {
     "axios": "^0.19.0",
     "commander": "^3.0.1",
-    "lodash": "^4.17.15"
+    "he": "^1.2.0",
+    "lodash": "^4.17.15",
+    "mustache": "^3.1.0"
   },
   "devDependencies": {
     "jest": "^24.9.0"

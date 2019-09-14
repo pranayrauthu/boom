@@ -1,1 +1,1 @@
-GET {{name}}/posts/1
+GET {{host}}/posts/1

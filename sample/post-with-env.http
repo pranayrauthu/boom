@@ -1,4 +1,4 @@
-POST {{name}}/posts HTTP/1.1
+POST {{host}}/posts HTTP/1.1
 Content-Type: application/json; charset=UTF-8
 
 {
