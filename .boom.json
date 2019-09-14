@@ -1,0 +1,8 @@
+{
+    "activeEnvironment": "default",
+    "enviroments": {
+        "default": {
+            "host": "https://jsonplaceholder.typicode.com"
+        }
+    }
+}

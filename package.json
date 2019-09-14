@@ -1,5 +1,5 @@
 {
-  "name": "boom",
+  "name": "@prauthu/boom",
   "version": "1.0.0",
   "description": "command line http tool",
   "main": "./src/index.js",
