@@ -2,6 +2,8 @@
 
 boom is a command line http tool.
 
+[![NPM](https://nodei.co/npm/@prauthu/boom.png)](https://nodei.co/npm/@prauthu/boom/)
+
 ## usage
 
 create a file with name `file.http` with following content
