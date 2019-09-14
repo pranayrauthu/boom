@@ -3,7 +3,7 @@ const {
     getSourceContent,
     logToConsole,
     parseFileContents
-} = require('./../utils');
+} = require('./../../utils');
 
 function makeRequest(req) {
     return new Promise((resolve, reject) => {

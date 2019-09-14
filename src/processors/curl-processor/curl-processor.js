@@ -2,7 +2,7 @@ const {
     getSourceContent,
     logToConsole,
     parseFileContents
-} = require('./../utils');
+} = require('./../../utils');
 
 function convertToCurl(data) {
     return new Promise((resolve, reject) => {
