@@ -8,8 +8,11 @@
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "http",
+    "curl"
+  ],
+  "author": "Pranay Rauthu <pranay.rauthu@gmail.com> (http://https://pranayrauthu.github.io/)",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
